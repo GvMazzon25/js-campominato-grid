@@ -4,3 +4,23 @@
     font-family: sans-serif;
     box-sizing: border-box;
 }
+
+/*Header Section*/
+
+header{
+    padding: 20px;
+    display: flex;
+}
+
+header .header-button{
+    text-align: center;
+    margin-top: 10px;
+}
+
+/*Main Section*/
+main{
+    background-color: rgba(126, 255, 212, 1);
+}
+
+
+/*Footer Section*/
