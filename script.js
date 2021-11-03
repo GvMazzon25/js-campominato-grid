@@ -48,6 +48,11 @@ playBtn.addEventListener('click', () =>{
         numList.push(num)
 
         const square = createGridSquare(num, cellsPerSide);
+
+        square.addEventListener('click', function() {
+            this.classList.add('clicked');
+        })
+
         grid.append(square)
     }
     console.log(numList);
@@ -81,7 +86,6 @@ function createGridSquare(num, cells){
     node.append(span);
 
     return node;
-
 }
 
 
