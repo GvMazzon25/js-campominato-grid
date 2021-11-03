@@ -9,7 +9,7 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 
 //Reference
 const playBtn = document.getElementById('play');
-const levels = document.getElementById('levels');
+const dimensionLevels = document.getElementById('levels');
 const wrapGrid = document.querySelector('.wrap-grid');
 
 
@@ -18,10 +18,12 @@ const wrapGrid = document.querySelector('.wrap-grid');
 playBtn.addEventListener('click', () =>{
     wrapGrid.innerHTML = '';
 
+    const gridDimension = dimensionLevels.value;
+    console.log(gridDimension)
     let cellsNumber;
     let cellsPerSide;
 
-    switch (levels){
+    switch (gridDimension){
         case '1':
             cellsNumber = 100;
             cellsPerSide = 10;
@@ -33,38 +35,30 @@ playBtn.addEventListener('click', () =>{
         case '3':
             cellsNumber = 49;
             cellsPerSide = 7;
-        break
     }
+    console.log(cellsNumber);
+    console.log(cellsPerSide);
 
     const grid = document.createElement('div');
     grid.classList.add('grid');
 
-    for (let i = 1; i <= cellsNumber; i++){
-        const square = createGridSquare(i, cellsPerSide)
-
-        square.addEventListener ('click',() => {
-            square.classList.add('clicked');
-        })
-
-        grid.append(square)
-
-    }
-
     wrapGrid.append(grid);
+
+
+    const numList = [];
+    for(let i = 1; i <= cellsNumber; i++){
+        
+    }
 })
 
-//Square Grid
-function createGridSquare(num, cells){
-    const nodo = document.createElement('div');
+function genUniqueNumber(list, max, min){
+    let number = 0;
 
-    nodo.classList.add('square');
-
-    nodo.style.width = `calc(100% / ${cells})`;
-    nodo.style.height = `calc(100% / ${cells})`;
-
-    nodo.append(num);
-
-    return nodo;
+    do{
+        number = Math.floor(Math.random()*(max - min +1)) - min;
+    }while(list.includes(number)){
+        return number;
+    }
 }
 
 

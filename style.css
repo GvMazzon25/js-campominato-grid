@@ -59,7 +59,7 @@ header{
 }
 /*Main*/
 main{
-    height: 70vh;
+    height: 76vh;
 }
 
 /*Grid*/
@@ -83,7 +83,7 @@ main{
      cursor: pointer;
  }
 
- .square.clicker{
+ .square.clicked{
      background-color: rgba(100, 149, 237, 1);
  }
 
