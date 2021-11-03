@@ -47,18 +47,22 @@ playBtn.addEventListener('click', () =>{
 
     const numList = [];
     for(let i = 1; i <= cellsNumber; i++){
-        
+        const num = genUniqueRandomNumber(numList, 1, cellsNumber)
+        numList.push(num)
     }
+    console.log(numList);
 })
 
-function genUniqueNumber(list, max, min){
+function genUniqueRandomNumber(list, min, max){
     let number = 0;
 
     do{
-        number = Math.floor(Math.random()*(max - min +1)) - min;
-    }while(list.includes(number)){
-        return number;
-    }
+        number = Math.floor(Math.random()*(max - min + 1)) - min;
+    }while(list.includes(number));
+    
+    return number;
 }
+
+
 
 
