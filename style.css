@@ -64,7 +64,7 @@ main{
 
 /*Grid*/
 .grid{
-    display:  flex;
+    display: flex;
     flex-wrap: wrap;
     width: 500px;
     height: 500px;
@@ -72,9 +72,6 @@ main{
     border: 1px solid #000;
 }
 
-.wrap-grid{
-    flex-wrap: wrap;
-}
 
  .square{
      display: flex;

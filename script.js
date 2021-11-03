@@ -7,34 +7,33 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 
  */
 
-
-//Refs 
-
+//Reference
 const playBtn = document.getElementById('play');
 const levels = document.getElementById('levels');
 const wrapGrid = document.querySelector('.wrap-grid');
 
-//start
 
+
+//Grid
 playBtn.addEventListener('click', () =>{
     wrapGrid.innerHTML = '';
 
     let cellsNumber;
     let cellsPerSide;
 
-    switch (levels.value){
+    switch (levels){
         case '1':
             cellsNumber = 100;
             cellsPerSide = 10;
-            break
-            case '2':
-                cellsNumber = 81;
-                cellsPerSide = 9;
-                break
-            case '3':
-                cellsNumber = 49;
-                cellsPerSide = 7;
-            break
+        break
+        case '2':
+            cellsNumber = 81;
+            cellsPerSide = 9;
+        break
+        case '3':
+            cellsNumber = 49;
+            cellsPerSide = 7;
+        break
     }
 
     const grid = document.createElement('div');
@@ -54,6 +53,7 @@ playBtn.addEventListener('click', () =>{
     wrapGrid.append(grid);
 })
 
+//Square Grid
 function createGridSquare(num, cells){
     const nodo = document.createElement('div');
 
@@ -66,3 +66,5 @@ function createGridSquare(num, cells){
 
     return nodo;
 }
+
+
